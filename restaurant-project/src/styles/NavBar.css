@@ -1,0 +1,26 @@
+.nav-bar-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.nav-links a {
+  margin-right: 25px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.company-logo {
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 20px;
+}
