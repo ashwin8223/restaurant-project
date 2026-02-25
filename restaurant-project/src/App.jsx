@@ -1,31 +1,47 @@
 import { Routes, Route } from 'react-router'
+import { useState } from 'react';
 import { NotFound } from './pages/NotFound';
-import { HomePage } from './pages/Home';
-import { AboutSection } from './pages/AboutSection';
-import { ContactPage } from './pages/Contact';
-import { MenuPage } from './pages/Menu';
-import { OrdersPage } from './pages/Orders';
+import { HomePage } from './pages/home/Home';
+import { AboutSection } from './pages/about/AboutSection';
+import { ContactPage } from './pages/contact/Contact';
+import { MenuPage } from './pages/menu/Menu';
+import { OrdersPage } from './pages/orders/OrdersPage';
 import { CheckoutPage } from './pages/checkout/CheckoutPage';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
 import './App.css'
 
 function App() {
+  const [orderItems, setOrderItems] = useState([]);
+
+  const addOrder = (item) => {
+    const exisitngItem = orderItems.find((orderItem) => orderItem.id === item.id);
+    if (exisitngItem) {
+      const updatedItems = orderItems.map((orderItem) => {
+        if (orderItem.id === item.id) {
+          return { ...orderItem, quantity: orderItem.quantity + 1 };
+        }
+        return orderItem;
+      });
+      setOrderItems(updatedItems);
+    } else {
+      setOrderItems([...orderItems, { ...item, quantity: 1 }]);
+    }
+  }
+
+  console.log(orderItems);
+
   return (
     <div className="app-container">
-      <Header />
       <main className="main-content">
         <Routes>
-          <Route index element={<HomePage />}></Route>
-          <Route path="/about" element={<AboutSection />}></Route>
-          <Route path="/contact" element={<ContactPage />}></Route>
-          <Route path="/menu" element={<MenuPage />}></Route>
-          <Route path="/orders" element={<OrdersPage />}></Route>
+          <Route index element={<HomePage orderItems={orderItems} />}></Route>
+          <Route path="/about" element={<AboutSection orderItems={orderItems} />}></Route>
+          <Route path="/contact" element={<ContactPage orderItems={orderItems} />}></Route>
+          <Route path="/menu" element={<MenuPage addOrder={addOrder} orderItems={orderItems} />}></Route>
+          <Route path="/orders" element={<OrdersPage orderItems={orderItems}/>}></Route>
           <Route path="/checkout" element={<CheckoutPage />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </main>
-      <Footer />
     </div>
   );
 }

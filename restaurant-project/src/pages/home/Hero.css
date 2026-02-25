@@ -12,7 +12,7 @@
 .image-container {
   position: absolute;
   inset: 0;
-  background-image: url("../assets/images/background-17.webp");
+  background-image: url("../../assets/images/background-17.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

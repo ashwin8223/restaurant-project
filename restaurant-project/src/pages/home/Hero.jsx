@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import '../styles/Hero.css';
+import './Hero.css';
 
 export function Hero() {
   return (
@@ -22,8 +22,7 @@ export function Hero() {
         </p>
       </div>
       <div className="hero-buttons">
-        <button className="hero-button"><NavLink to="/menu" className="hero-button-link">View Menu</NavLink></button>
-        <button className="hero-button">Make a Reservation</button>
+        <button className="hero-button"><NavLink to="/menu" className="hero-button-link">Explore Menu</NavLink></button>
       </div>
     </section>
   );

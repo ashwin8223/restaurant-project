@@ -1,8 +1,15 @@
 import { NavLink } from "react-router";
 import BagIcon from '../assets/images/icons/bag-icon.gif';
-import '../styles/NavBar.css';
+import './NavBar.css';
 
-export function NavBar() {
+export function NavBar({ orderItems }) {
+
+  let totalQuantity = 0;
+
+  orderItems.forEach((item) => {
+    totalQuantity += item.quantity;
+  });
+
   return (
     <nav className="nav-bar-container">
       <div className="left-section">
@@ -25,7 +32,7 @@ export function NavBar() {
         <div className="checkout-link">
           <NavLink to="/checkout">
             <img src={BagIcon} alt="Bag Icon" className="bag-icon" />
-            <div className="order-quantity">0</div>
+            <div className="order-quantity">{totalQuantity}</div>
           </NavLink>
         </div>
       </div>

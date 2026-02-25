@@ -2,6 +2,14 @@
   background-color: #FFCE99;
 }
 
+.menu-title {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 40px;
+}
+
 .menu-item {
   display: flex;
   align-items: center;
@@ -33,7 +41,7 @@
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 40px;
-  padding: 40px;
+  padding: 40px 220px;
 }
 
 .menu-item-image-container {

@@ -1,6 +1,6 @@
-import { formatMoney } from "../utils/money";
+import { formatMoney } from '../../utils/money';
 
-export function MenuItem({ Items }) {
+export function MenuItem({ Items, addOrder }) {
   return (
     <div className="menu-item">
       <div className="menu-item-image-container">
@@ -11,7 +11,7 @@ export function MenuItem({ Items }) {
         <p>{Items.description}</p>
         <div className="order-button-container">
           <p className="menu-item-price">{formatMoney(Items.price)}</p>
-          <button className="order-button">Order Now</button>
+          <button className="order-button" onClick={() => addOrder(Items)}>Order Now</button>
         </div>
       </div>
     </div>

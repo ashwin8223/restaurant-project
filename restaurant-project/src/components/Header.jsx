@@ -1,9 +1,9 @@
-import { NavBar } from "./NavBar";
+import { NavBar } from './NavBar';
 
-export function Header() {
+export function Header({ orderItems }) {
   return(
     <header>
-      <NavBar />
+      <NavBar orderItems={orderItems} />
     </header>
   );
 }
