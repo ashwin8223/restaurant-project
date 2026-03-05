@@ -21,7 +21,7 @@
   border-radius: 40px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   z-index: 1;
-  width: 600px;
+  width: 100%;
 }
 
 .menu-item-details {
@@ -49,6 +49,13 @@
   justify-items: center;
   gap: 40px;
   padding: 40px 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
 }
 
 .menu-item-image-container {

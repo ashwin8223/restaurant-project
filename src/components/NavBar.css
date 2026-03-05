@@ -9,6 +9,13 @@
   background-color: #000000;
 }
 
+@media screen and (max-width: 768px) {
+  .nav-bar-container {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
 .left-section {
   display: flex;
   align-items: center;
