@@ -27,6 +27,11 @@ function App() {
     }
   }
 
+  const deleteOrder = (id) => {
+    const updatedItems = orderItems.filter((orderItem) => orderItem.id !== id);
+    setOrderItems(updatedItems);
+  }
+
   console.log(orderItems);
 
   return (
@@ -38,7 +43,7 @@ function App() {
           <Route path="/contact" element={<ContactPage orderItems={orderItems} />}></Route>
           <Route path="/menu" element={<MenuPage addOrder={addOrder} orderItems={orderItems} />}></Route>
           <Route path="/orders" element={<OrdersPage orderItems={orderItems}/>}></Route>
-          <Route path="/checkout" element={<CheckoutPage />}></Route>
+          <Route path="/checkout" element={<CheckoutPage orderItems={orderItems} deleteOrder={deleteOrder}/>}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </main>

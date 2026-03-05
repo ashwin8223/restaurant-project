@@ -1,9 +1,89 @@
+.checkout-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.checkout-logo {
+  color: black;
+  font-size: 40px;
+  font-family: 'Sevillana';
+  font-weight: bold;
+}
+
+.checkout-logo-active {
+  text-decoration: none;
+  color: inherit;
+}
+
 .checkout-page {
   font-family: sans-serif;
 }
 
 .checkout-title {
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
   font-weight: bold;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  justify-items: center;
+  padding: 40px 220px;
+}
+
+.checkout-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 25px 60px;
+  color: white;
+  padding: 25px 60px;
+  background-color: black;
+  border-radius: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 600px;
+}
+
+.checkout-item-image {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+
+.checkout-item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 40px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+  width: 50%;
+}
+
+.checkout-item-remove-button {
+  width: 120px;
+  margin-top: 10px;
+  margin-left: 60px;
+  padding: 15px 25px;
+  background-color: #C3110C;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-family: sans-serif;
+  cursor: pointer;
 }
