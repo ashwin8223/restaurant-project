@@ -12,11 +12,13 @@ export function MenuPage({ addOrder, orderItems }) {
       <div className="menu-page">
         <h1 className="menu-title">Our Menu</h1>
         <div className="menu-container">
-          {menuItems.map((item) => {
-            return (
-              <MenuItem key={item.id} Items={item} addOrder={addOrder} />
-            );
-          })}
+          <div className="menu-grid">
+            {menuItems.map((item) => {
+              return (
+                <MenuItem key={item.id} Items={item} addOrder={addOrder} />
+              );
+            })}
+          </div>
         </div>
       </div>
       <Footer />

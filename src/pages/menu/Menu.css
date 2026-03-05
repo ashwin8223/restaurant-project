@@ -1,5 +1,6 @@
 .menu-page {
   background-color: #FFCE99;
+  width: 100%;
 }
 
 .menu-title {
@@ -39,11 +40,15 @@
 }
 
 .menu-container {
+  max-width: 100%;
+}
+
+.menu-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 40px;
-  padding: 40px 220px;
+  padding: 40px 40px;
 }
 
 .menu-item-image-container {
