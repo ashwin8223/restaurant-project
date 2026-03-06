@@ -7,9 +7,11 @@ export function CheckoutItems({ Items, deleteOrder }) {
         <img className="checkout-item-image" src={Items.image} alt={Items.name} />
       </div>
       <div className="checkout-item-details">
-        <h3>{Items.name}</h3>
-        <p>Quantity: {Items.quantity}</p>
-        <p>Total: {formatMoney(Items.price * Items.quantity)}</p>
+        <div className="checkout-item-row name">{Items.name}</div>
+        <div className="checkout-item-row quantity">Quantity: {Items.quantity}</div>
+        <div className="checkout-item-row price">Total: {formatMoney(Items.price * Items.quantity)}</div>
+      </div>
+      <div className="checkout-item-remove">
         <button className="checkout-item-remove-button" onClick={() => deleteOrder(Items.id)}>Remove</button>
       </div>
     </div>

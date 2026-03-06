@@ -30,9 +30,11 @@
 .checkout-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  gap: 100px;
   justify-items: center;
-  padding: 40px 220px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .checkout-section {
@@ -43,22 +45,23 @@
 
 .checkout-item {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 40px;
-  padding: 25px 60px;
-  color: white;
-  background-color: black;
-  border-radius: 40px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-  width: 560px;
+  padding: 40px 80px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  width: 100%;
+  min-width: 800px;
+  max-width: 1000px;
 }
 
 .checkout-item-image {
   object-fit: cover;
   width: 150px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .checkout-item-details {
@@ -67,10 +70,28 @@
   justify-content: center;
   align-items: flex-start;
   margin-left: 40px;
-  color: white;
+  color: black;
   font-family: sans-serif;
   font-size: 18px;
-  width: 50%;
+  width: 100%;
+  min-width: 240px;
+  max-width: 400px;
+}
+
+.checkout-item-row {
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.checkout-item-remove {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkout-item-remove-button {
@@ -85,6 +106,5 @@
 }
 
 .checkout-item-remove-button:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #237227;
 }
