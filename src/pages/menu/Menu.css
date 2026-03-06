@@ -91,9 +91,6 @@
   color: white;
   border: none;
   border-radius: 25px;
-  font-size: 18px;
-  font-family: sans-serif;
-  cursor: pointer;
 }
 
 .order-button:hover {

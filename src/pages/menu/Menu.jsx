@@ -1,6 +1,6 @@
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { menuItems } from "../../data/menuList";
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
+import { menuItems } from '../../data/menuList';
 import { MenuItem } from './MenuItem';
 import './Menu.css';
 

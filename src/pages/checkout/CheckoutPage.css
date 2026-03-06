@@ -44,16 +44,15 @@
 .checkout-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 40px;
   padding: 25px 60px;
   color: white;
-  padding: 25px 60px;
   background-color: black;
   border-radius: 40px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   z-index: 1;
-  width: 600px;
+  width: 560px;
 }
 
 .checkout-item-image {
@@ -83,7 +82,9 @@
   color: white;
   border: none;
   border-radius: 25px;
-  font-size: 18px;
-  font-family: sans-serif;
-  cursor: pointer;
+}
+
+.checkout-item-remove-button:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
