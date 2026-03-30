@@ -3,7 +3,7 @@ import { CheckoutItems } from './CheckoutItems';
 import { PaymentSummary } from './PaymentSummary';
 import './CheckoutPage.css';
 
-export function CheckoutPage({ orderItems, deleteOrder }) {
+export function CheckoutPage({ orderItems, deleteOrder, updateOrder }) {
   return (
     <>
       <title>Checkout</title>
@@ -20,7 +20,7 @@ export function CheckoutPage({ orderItems, deleteOrder }) {
           <div className="checkout-section">
             {orderItems.map((item) => {
               return (
-                <CheckoutItems key={item.id} Items={item} deleteOrder={deleteOrder} />
+                <CheckoutItems key={item.id} Items={item} deleteOrder={deleteOrder} updateOrder={updateOrder} />
               );
             })}
           </div>

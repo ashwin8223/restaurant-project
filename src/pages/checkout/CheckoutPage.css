@@ -108,3 +108,19 @@
 .checkout-item-remove-button:hover {
   background-color: #237227;
 }
+
+.checkout-item-update-button {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 60px;
+  padding: 10px;
+  width: 40px;
+  background-color: #C3110C;
+  color: white;
+  border: none;
+  border-radius: 40px;
+}
+
+.checkout-item-update-button:hover {
+  background-color: #237227;
+}

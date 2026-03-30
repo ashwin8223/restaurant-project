@@ -32,7 +32,15 @@ function App() {
     setOrderItems(updatedItems);
   }
 
-  console.log(orderItems);
+  const updateOrder = (id, quantity) => {
+    const updatedItems = orderItems.map((orderItem) => {
+      if (orderItem.id === id) {
+        return { ...orderItem, quantity: orderItem.quantity + quantity };
+      }
+      return orderItem;
+    }).filter((orderItem) => orderItem.quantity > 0);
+    setOrderItems(updatedItems);
+  }
 
   return (
     <div className="app-container">
@@ -43,7 +51,7 @@ function App() {
           <Route path="/contact" element={<ContactPage orderItems={orderItems} />}></Route>
           <Route path="/menu" element={<MenuPage addOrder={addOrder} orderItems={orderItems} />}></Route>
           <Route path="/orders" element={<OrdersPage orderItems={orderItems}/>}></Route>
-          <Route path="/checkout" element={<CheckoutPage orderItems={orderItems} deleteOrder={deleteOrder}/>}></Route>
+          <Route path="/checkout" element={<CheckoutPage orderItems={orderItems} deleteOrder={deleteOrder} updateOrder={updateOrder} />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </main>
