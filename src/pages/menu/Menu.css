@@ -1,6 +1,7 @@
 .menu-page {
   background-color: #FFCE99;
   width: 100%;
+  min-height: 100vh;
 }
 
 .menu-title {

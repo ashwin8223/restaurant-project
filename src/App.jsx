@@ -55,16 +55,18 @@ function App() {
     setOrderItems([]);
   };
 
+  const [searchText, setSearchText] = useState('');
+
   return (
     <div className="app-container">
       <main className="main-content">
         <Routes>
-          <Route index element={<HomePage orderItems={orderItems} />}></Route>
-          <Route path="/about" element={<AboutSection orderItems={orderItems} />}></Route>
-          <Route path="/contact" element={<ContactPage orderItems={orderItems} />}></Route>
-          <Route path="/menu" element={<MenuPage addOrder={addOrder} orderItems={orderItems} />}></Route>
-          <Route path="/orders" element={<OrdersPage orders={orders} orderItems={orderItems}/>}></Route>
-          <Route path="/checkout" element={<CheckoutPage orderItems={orderItems} deleteOrder={deleteOrder} updateOrder={updateOrder} placeOrder={placeOrder}/>}></Route>
+          <Route index element={<HomePage orderItems={orderItems} onSearch={setSearchText} searchText={searchText} />}></Route>
+          <Route path="/about" element={<AboutSection orderItems={orderItems} onSearch={setSearchText} searchText={searchText} />}></Route>
+          <Route path="/contact" element={<ContactPage orderItems={orderItems} onSearch={setSearchText} searchText={searchText} />}></Route>
+          <Route path="/menu" element={<MenuPage addOrder={addOrder} orderItems={orderItems} searchText={searchText} onSearch={setSearchText} />}></Route>
+          <Route path="/orders" element={<OrdersPage orders={orders} orderItems={orderItems} onSearch={setSearchText} searchText={searchText} />}></Route>
+          <Route path="/checkout" element={<CheckoutPage orderItems={orderItems} deleteOrder={deleteOrder} updateOrder={updateOrder} placeOrder={placeOrder} />}></Route>
           <Route path="/success" element={<OrderSuccess />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

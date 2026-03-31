@@ -1,14 +1,34 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import BagIcon from '../assets/images/icons/bag-icon.gif';
 import './NavBar.css';
 
-export function NavBar({ orderItems }) {
+export function NavBar({ orderItems, onSearch, searchText }) {
 
   let totalQuantity = 0;
 
   orderItems.forEach((item) => {
     totalQuantity += item.quantity;
   });
+
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    onSearch(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      const value = e.target.value.trim();
+
+      if (!value) return;
+
+      onSearch(value);
+
+      setTimeout(() => {
+        navigate('/menu');
+      }, 0);
+    }
+  };
 
   return (
     <nav className="nav-bar-container">
@@ -24,6 +44,7 @@ export function NavBar({ orderItems }) {
           <li><NavLink to="/about">About</NavLink></li>
           <li><NavLink to="/menu">Menu</NavLink></li>
         </ul>
+        <input type="text" placeholder="Search for dishes..." className="search-bar" onChange={handleSearch} onKeyDown={handleKeyPress} value={searchText || ""}/>
       </div>
       <div className="right-section">
         <div className="orders-link">

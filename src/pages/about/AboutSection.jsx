@@ -2,11 +2,11 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import './AboutSection.css';
 
-export function AboutSection({ orderItems }) {
+export function AboutSection({ orderItems, onSearch, searchText }) {
   return (
     <>
       <title>About Us</title>
-      <Header orderItems={orderItems} />
+      <Header orderItems={orderItems} onSearch={onSearch} searchText={searchText} />
       <div className="about-page">
         <section className="about-section">
           <h2>About Us</h2>

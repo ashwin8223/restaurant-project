@@ -3,11 +3,11 @@ import { Footer } from "../../components/Footer";
 import { OrderItems } from "./OrderItems";
 import './OrdersPage.css';
 
-export function OrdersPage({ orders, orderItems }) {
+export function OrdersPage({ orders, orderItems, onSearch, searchText }) {
   return (
     <>
       <title>Orders</title>
-      <Header orderItems={orderItems} />
+      <Header orderItems={orderItems} onSearch={onSearch} searchText={searchText} />
       <div className="orders-page">
         {orders.length === 0 ? (
           <div className="orders-empty">

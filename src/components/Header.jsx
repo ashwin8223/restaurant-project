@@ -1,9 +1,9 @@
 import { NavBar } from './NavBar';
 
-export function Header({ orderItems }) {
-  return(
+export function Header({ orderItems, onSearch, searchText }) {
+  return (
     <header>
-      <NavBar orderItems={orderItems} />
+      <NavBar orderItems={orderItems} onSearch={onSearch} searchText={searchText} />
     </header>
   );
 }

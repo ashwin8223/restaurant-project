@@ -107,3 +107,11 @@
   top: 20px;
   right: 9.5px;
 }
+
+.search-bar {
+  margin-left: 20px;
+  padding: 14px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+}
