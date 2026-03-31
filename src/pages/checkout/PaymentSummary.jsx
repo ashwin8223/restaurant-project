@@ -1,7 +1,15 @@
+import { useNavigate } from 'react-router';
 import { formatMoney } from '../../utils/money';
 import './PaymentSummary.css';
 
-export function PaymentSummary({ orderItems }) {
+export function PaymentSummary({ orderItems, placeOrder}) {
+
+  const navigate = useNavigate();
+
+  function handlePlaceOrder() {
+    placeOrder();
+    navigate('/success');
+  }
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">Payment Summary</div>
@@ -25,7 +33,9 @@ export function PaymentSummary({ orderItems }) {
               <span>{formatMoney(orderItems.reduce((total, item) => total + item.price * item.quantity, 0) * 1.1 + 5.00)}</span>
             </div>
           </div>
-          <div className="checkout-button-container"><button className="checkout-button">Place your order</button></div>
+          <div className="checkout-button-container">
+            <button onClick={handlePlaceOrder} className="checkout-button">Place your order</button>
+          </div>
         </>
       )}
     </div>

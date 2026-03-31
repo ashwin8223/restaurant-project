@@ -3,7 +3,7 @@ import { CheckoutItems } from './CheckoutItems';
 import { PaymentSummary } from './PaymentSummary';
 import './CheckoutPage.css';
 
-export function CheckoutPage({ orderItems, deleteOrder, updateOrder }) {
+export function CheckoutPage({ orderItems, deleteOrder, updateOrder, placeOrder }) {
   return (
     <>
       <title>Checkout</title>
@@ -25,7 +25,7 @@ export function CheckoutPage({ orderItems, deleteOrder, updateOrder }) {
             })}
           </div>
           <div className="payment-section">
-            <PaymentSummary orderItems={orderItems} />
+            <PaymentSummary orderItems={orderItems} placeOrder={placeOrder} />
           </div>
         </div>
       </div>

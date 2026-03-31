@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router'
 import { useState } from 'react';
 import { NotFound } from './pages/NotFound';
+import { OrderSuccess } from './pages/OrderSuccess';
 import { HomePage } from './pages/home/Home';
 import { AboutSection } from './pages/about/AboutSection';
 import { ContactPage } from './pages/contact/Contact';
@@ -11,6 +12,7 @@ import './App.css'
 
 function App() {
   const [orderItems, setOrderItems] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   const addOrder = (item) => {
     const exisitngItem = orderItems.find((orderItem) => orderItem.id === item.id);
@@ -42,6 +44,17 @@ function App() {
     setOrderItems(updatedItems);
   }
 
+  const placeOrder = () => {
+    if (orderItems.length === 0) {
+      return;
+    }
+    setOrders(prev => {
+      const updatedOrders = [...prev, ...orderItems];
+      return updatedOrders;
+    });
+    setOrderItems([]);
+  };
+
   return (
     <div className="app-container">
       <main className="main-content">
@@ -50,8 +63,9 @@ function App() {
           <Route path="/about" element={<AboutSection orderItems={orderItems} />}></Route>
           <Route path="/contact" element={<ContactPage orderItems={orderItems} />}></Route>
           <Route path="/menu" element={<MenuPage addOrder={addOrder} orderItems={orderItems} />}></Route>
-          <Route path="/orders" element={<OrdersPage orderItems={orderItems}/>}></Route>
-          <Route path="/checkout" element={<CheckoutPage orderItems={orderItems} deleteOrder={deleteOrder} updateOrder={updateOrder} />}></Route>
+          <Route path="/orders" element={<OrdersPage orders={orders} orderItems={orderItems}/>}></Route>
+          <Route path="/checkout" element={<CheckoutPage orderItems={orderItems} deleteOrder={deleteOrder} updateOrder={updateOrder} placeOrder={placeOrder}/>}></Route>
+          <Route path="/success" element={<OrderSuccess />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </main>
