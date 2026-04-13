@@ -2,7 +2,7 @@
   "name": "restaurant-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ashwin8223.github.io/restaurant-project",
+  "homepage": "https://ashwin8223.github.io/restaurant-project/",
   "type": "module",
   "scripts": {
     "dev": "vite",
